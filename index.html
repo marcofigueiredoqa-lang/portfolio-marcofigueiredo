@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Figueiredo · QA Engineer</title>
+  <meta name="description" content="Portfólio de Marco Figueiredo — Analista de Qualidade de Software com 4+ anos de experiência em automação de testes, CI/CD e ambientes ágeis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f6f6f4;
+      --bg-tertiary: #f0efeb;
+      --text-primary: #1a1a18;
+      --text-secondary: #5a5a56;
+      --text-tertiary: #9a9a94;
+      --border: rgba(0,0,0,0.10);
+      --border-md: rgba(0,0,0,0.18);
+      --green: #1D9E75;
+      --green-light: #E1F5EE;
+      --green-dark: #0F6E56;
+      --green-darker: #085041;
+      --blue-light: #E6F1FB;
+      --blue: #185FA5;
+      --blue-dark: #0C447C;
+      --amber-light: #FAEEDA;
+      --amber: #854F0B;
+      --amber-dark: #633806;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a18;
+        --bg-secondary: #222220;
+        --bg-tertiary: #2a2a27;
+        --text-primary: #f0efeb;
+        --text-secondary: #a8a89e;
+        --text-tertiary: #66665e;
+        --border: rgba(255,255,255,0.10);
+        --border-md: rgba(255,255,255,0.18);
+        --green-light: #085041;
+        --green: #5DCAA5;
+        --green-dark: #9FE1CB;
+        --green-darker: #9FE1CB;
+        --blue-light: #0C447C;
+        --blue: #85B7EB;
+        --blue-dark: #B5D4F4;
+        --amber-light: #633806;
+        --amber: #FAC775;
+        --amber-dark: #FAC775;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-tertiary);
+      border-bottom: 0.5px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    nav a {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--green); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem 2rem 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 5px; height: 100%;
+      background: var(--green);
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      padding: 3px 12px;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 1.75rem;
+    }
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .hero-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border: 0.5px solid var(--border-md);
+      border-radius: 4px;
+      padding: 5px 12px;
+      background: var(--bg-secondary);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .hero-links a:hover {
+      color: var(--green);
+      border-color: var(--green);
+      background: var(--green-light);
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+    .skill-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      transition: border-color 0.15s;
+    }
+    .skill-card:hover { border-color: var(--border-md); }
+    .skill-card-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .stag {
+      font-size: 12px;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      border-radius: 4px;
+      padding: 3px 8px;
+      border: 0.5px solid var(--border);
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+    }
+    .proj-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .proj-card:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(29,158,117,0.10);
+    }
+    .proj-icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .proj-icon.web { background: var(--green-light); color: var(--green-dark); }
+    .proj-icon.api { background: var(--blue-light); color: var(--blue-dark); }
+    .proj-icon.perf { background: var(--amber-light); color: var(--amber-dark); }
+    .proj-title { font-weight: 700; font-size: 14px; line-height: 1.3; }
+    .proj-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.55; flex: 1; }
+    .proj-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      align-self: flex-start;
+    }
+    .proj-badge.web { background: var(--green-light); color: var(--green-dark); }
+    .proj-badge.api { background: var(--blue-light); color: var(--blue); }
+    .proj-badge.perf { background: var(--amber-light); color: var(--amber); }
+    .proj-link {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--green);
+      display: flex; align-items: center; gap: 4px;
+      word-break: break-all;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 12px; }
+    .exp-item {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.15s;
+    }
+    .exp-item:hover { border-color: var(--border-md); }
+    .exp-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; flex-wrap: wrap; gap: 6px;
+      margin-bottom: 0.85rem;
+    }
+    .exp-company { font-weight: 700; font-size: 15px; }
+    .exp-role { font-size: 13px; color: var(--green); font-weight: 500; margin-top: 2px; }
+    .exp-period {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .exp-bullets li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      padding-left: 16px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--green);
+      font-size: 11px; top: 2px;
+    }
+
+    /* ── EDU / CERT ── */
+    .edu-cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 540px) { .edu-cert-grid { grid-template-columns: 1fr; } }
+    .mini-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+    .mini-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .mini-item { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+    .mini-item + .mini-item { margin-top: 10px; }
+    .mini-inst {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      font-family: 'Space Mono', monospace;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      padding-top: 2.5rem;
+      margin-top: 3rem;
+      border-top: 0.5px solid var(--border);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero        { animation: fadeUp 0.5s ease both; }
+    .about-text  { animation: fadeUp 0.5s 0.1s ease both; }
+    .skills-grid { animation: fadeUp 0.5s 0.15s ease both; }
+    .projects-grid { animation: fadeUp 0.5s 0.2s ease both; }
+    .exp-list    { animation: fadeUp 0.5s 0.25s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .container { padding: 1.5rem 1rem 4rem; }
+      .hero { padding: 2rem 1.25rem 1.5rem 1.75rem; }
+      nav { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#sobre">// sobre</a>
+  <a href="#projetos">// projetos</a>
+  <a href="#experiencia">// experiência</a>
+  <a href="#formacao">// formação</a>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="hero-tag">// QA Engineer · Brasília, Brasil</div>
+    <h1>Marco <span>Figueiredo</span></h1>
+    <p class="hero-sub">Analista de Qualidade de Software · Pleno · 4+ anos de experiência</p>
+    <div class="hero-links">
+      <a href="mailto:marco.figueiredoqa@gmail.com">✉ marco.figueiredoqa@gmail.com</a>
+      <a href="https://linkedin.com/in/marco-sfigueiredo/" target="_blank" rel="noopener">⇗ LinkedIn</a>
+      <a href="https://github.com/marcofigueiredoqa-lang" target="_blank" rel="noopener">⇗ GitHub</a>
+      <a href="tel:+5561981047343">☎ 61 98104-7343</a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <p class="section-label" id="sobre">// sobre</p>
+  <div class="about-text">
+    Analista de QA com mais de 4 anos de experiência em testes manuais (web e mobile) e automatizados, atuando em ambientes ágeis (Scrum). Possuo experiência na criação de frameworks de automação do zero com Robot Framework e Playwright, testes de APIs com RestAssured e Postman e testes de performance com JMeter. Trabalho com práticas de CI/CD e integração contínua, além de atuar na definição de estratégias de teste, análise de requisitos e melhoria contínua dos processos, focando na qualidade e confiabilidade das entregas.
+  </div>
+
+  <!-- HABILIDADES -->
+  <p class="section-label">// habilidades</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-label">Testes</div>
+      <div class="skill-tags">
+        <span class="stag">Manual</span>
+        <span class="stag">Automatizado</span>
+        <span class="stag">Funcional</span>
+        <span class="stag">Regressão</span>
+        <span class="stag">API</span>
+        <span class="stag">Usabilidade</span>
+        <span class="stag">Acessibilidade</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Automação</div>
+      <div class="skill-tags">
+        <span class="stag">Robot Framework</span>
+        <span class="stag">Cypress</span>
+        <span class="stag">Playwright</span>
+        <span class="stag">Selenium</span>
+        <span class="stag">Appium</span>
+        <span class="stag">RestAssured</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Ferramentas</div>
+      <div class="skill-tags">
+        <span class="stag">JIRA</span>
+        <span class="stag">Git</span>
+        <span class="stag">Postman</span>
+        <span class="stag">SQL</span>
+        <span class="stag">JMeter</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">DevOps</div>
+      <div class="skill-tags">
+        <span class="stag">CI/CD</span>
+        <span class="stag">Jenkins</span>
+        <span class="stag">Docker</span>
+        <span class="stag">BDD</span>
+        <span class="stag">Scrum</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJETOS -->
+  <p class="section-label" id="projetos">// projetos</p>
+  <div class="projects-grid">
+
+    <a class="proj-card" href="https://github.com/marcofigueiredoqa-lang/blog-agi-tests" target="_blank" rel="noopener">
+      <div class="proj-icon web">WEB</div>
+      <div>
+        <div class="proj-title">Automação Web com Playwright</div>
+        <div class="proj-desc">Suite de testes E2E para aplicação web utilizando Playwright com cobertura de fluxos críticos e geração de relatórios.</div>
+      </div>
+      <span class="proj-badge web">Playwright · JavaScript</span>
+      <div class="proj-link">⇗ blog-agi-tests</div>
+    </a>
+
+    <a class="proj-card" href="https://github.com/marcofigueiredoqa-lang/dog-api-test" target="_blank" rel="noopener">
+      <div class="proj-icon api">API</div>
+      <div>
+        <div class="proj-title">Testes de API com Java + RestAssured</div>
+        <div class="proj-desc">Automação de testes de contrato e funcionais de API REST com Java e RestAssured, incluindo validação de schemas e status codes.</div>
+      </div>
+      <span class="proj-badge api">Java · RestAssured</span>
+      <div class="proj-link">⇗ dog-api-test</div>
+    </a>
+
+    <a class="proj-card" href="https://github.com/marcofigueiredoqa-lang/blazedemo-performance" target="_blank" rel="noopener">
+      <div class="proj-icon perf">PERF</div>
+      <div>
+        <div class="proj-title">Testes de Performance com JMeter</div>
+        <div class="proj-desc">Plano de testes de carga e stress com análise de throughput, latência e identificação de gargalos em aplicação web.</div>
+      </div>
+      <span class="proj-badge perf">JMeter · BlazeMeter</span>
+      <div class="proj-link">⇗ blazedemo-performance</div>
+    </a>
+
+  </div>
+
+  <!-- EXPERIÊNCIA -->
+  <p class="section-label" id="experiencia">// experiência</p>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">BlueService Softwares</div>
+          <div class="exp-role">Analista de QA Pleno</div>
+        </div>
+        <div class="exp-period">05/2023 —</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Liderança técnica no projeto de automação com Robot Framework do zero, definindo padrões e arquitetura</li>
+        <li>Elaboração de roteiros de cobertura de testes e análise de cenários complexos em interfaces Web e Mobile</li>
+        <li>Execução de testes funcionais, não funcionais, regressão, integração e usabilidade</li>
+        <li>Participação ativa na definição de requisitos e refinamentos com o time de produto</li>
+        <li>Stack: Robot Framework, BDD, Pipelines CI/CD, Git, JIRA</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Ágape Sistemas</div>
+          <div class="exp-role">Analista de QA Jr</div>
+        </div>
+        <div class="exp-period">12/2021 — 05/2023</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Desenvolvimento de automações com Cypress e testes de API com Postman</li>
+        <li>Revisão de UI garantindo fidelidade ao design e funcionalidade esperada</li>
+        <li>Registro detalhado de falhas no JIRA com logs e evidências para facilitar reprodução</li>
+        <li>Criação e execução de casos de teste para web e mobile em squads ágeis</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FORMAÇÃO & CERTIFICAÇÕES -->
+  <p class="section-label" id="formacao">// formação & certificações</p>
+  <div class="edu-cert-grid">
+
+    <div class="mini-card">
+      <div class="mini-card-title">Formação Acadêmica</div>
+      <div class="mini-item">
+        Análise e Desenvolvimento de Sistemas
+        <span class="mini-inst">Anhanguera · 2020–2022</span>
+      </div>
+      <div class="mini-item">
+        Pós-graduação em Engenharia de Software
+        <span class="mini-inst">Instituto Líbano · 2024–2025</span>
+      </div>
+      <div class="mini-item">
+        Especialização em Teste e Qualidade de Software
+        <span class="mini-inst">Uninassau · 2024–2025</span>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-card-title">Certificações</div>
+      <div class="mini-item">
+        Scrum Foundation Professional Certificate (SFPC)
+        <span class="mini-inst">Obtida ✓</span>
+      </div>
+      <div class="mini-item">
+        CTFL — ISTQB 
+        <span class="mini-inst">Em estudos · previsão Mai/2026</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Marco Figueiredo · marco.figueiredoqa@gmail.com · Brasília, DF
+  </footer>
+
+</div>
+</body>
+</html>
